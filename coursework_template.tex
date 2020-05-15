@@ -16,6 +16,11 @@
 \usepackage{listings}
 \usepackage[colorlinks, linkcolor=blue, urlcolor=blue]{hyperref}
 \usepackage{indentfirst}
+
+\usepackage{chngcntr} % нумерация графиков и таблиц по секциям
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+
 \graphicspath{{images/}}%путь к рисункам
 %\usepackage{mathptmx}
 
