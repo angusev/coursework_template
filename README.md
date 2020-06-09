@@ -1,14 +1,13 @@
-# coursework_template
-
 ## Курсовая
 
-> Файл: `coursework.tex`
+> Титульный лист: `title.tex`
+> Основной файл: `coursework.tex`
 
 ## Презентация к защите
 
 > Файл: `slides.tex`
 
-Презентацию тоже удобно делать в LaTeX. Для этого необходимо использовать класс `beamer`. Примеры того, на что способен этот класс: 
+Презентацию тоже удобно делать в LaTeX. Для этого необходимо использовать класс `beamer`. Примеры презентаций этого класса: 
 
 1. https://www.overleaf.com/learn/latex/beamer
 2. https://www.latextemplates.com/template/beamer-presentation
