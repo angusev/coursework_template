@@ -14,15 +14,19 @@
 \usepackage{pgf}
 \usepackage{subcaption}
 \usepackage{listings}
-\usepackage[colorlinks, linkcolor=blue, urlcolor=blue]{hyperref}
 \usepackage{indentfirst}
+\usepackage[colorlinks,citecolor=blue,linkcolor=blue,bookmarks=false,hypertexnames=true, urlcolor=blue]{hyperref} 
+\usepackage{indentfirst}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage{tablefootnote}
 
 \usepackage{chngcntr} % нумерация графиков и таблиц по секциям
 \counterwithin{table}{section}
 \counterwithin{figure}{section}
 
-\graphicspath{{images/}}%путь к рисункам
-%\usepackage{mathptmx}
+\graphicspath{{graphics/}}%путь к рисункам
 
 \makeatletter
 \renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
@@ -45,8 +49,6 @@
 \renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
 
-\newcommand{\imgh}[3]{\begin{figure}[h]\center{\includegraphics[width=#1]{#2}}\caption{#3}\label{ris:#2}\end{figure}}
-
 \begin{document}
 \input{title.tex}% это титульный лист
 \newpage
@@ -57,36 +59,58 @@
 }
 
 \newpage
+\section{Примеры} 
+\subsection{Ссылки на статьи}
 
-\section{Введение} 
-\subsection{Описание предметной области}
+Можно ссылаться на статью вот так:  \bibref{chirkova18}{Chirkova et al.}{2017}.
 
-Пример, как использовать ссылки на источник:\\
-В качестве базовой модели для тестирования разработанного алгоритма была взята модель \bibref{code2seq}{Alon et al.}{2019}.
+Соответственно, выберите один из вариантов и удалите внизу файлов ненужный список.
+
+\subsection{График}
 
 График \ref{fig:by_epochs} достаточно бессмысленный без контекста.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=1\textwidth]{graphics/example.png}
-	\caption{Графики зависимостей разреженностей и качества от числа эпох }
+	\includegraphics[width=1\textwidth]{example.png}
+	\caption{Пример графика}
 	\label{fig:by_epochs}
 \end{figure}
 
 
+\subsection{Таблица}
+
+\begin{table}[htbp]
+	\caption{Пример таблички}
+	\footnotesize
+	\centering
+	\begin{tabular}{lrrrrrrrr}
+		\toprule
+		& \multicolumn{3}{c}{$\mathsf{Val}$} &
+		\multicolumn{3}{c}{$\mathsf{Test}$} \\
+		\cmidrule(lr){2-4} \cmidrule(l){5-7} 
+		{} &  $\mathsf{Prec}$ &  $\mathsf{Rec}$ &  $\mathsf{F1}$ &  $\mathsf{Prec}$ &  $\mathsf{Rec}$ &  $\mathsf{F1}$  &  $\mathsf{nodes}$ & $\mathsf{subtokens}$\\
+		\midrule
+		запуск 1    &    0.4894 &   0.3775 &  0.4263 &     0.4824 &    0.3683 &   0.4177 & 10029 & 179\\
+		запуск 2    &    0.4887 &   0.3739 &  0.4237 &     0.4891 &    0.3724 &   0.4228 & 10039 & 177\\
+		запуск 3    &    0.4820 &   0.3751 &  0.4219 &     0.4838 &    0.3677 &   0.4178 & 10037&	180\\
+		\midrule
+		\bf{среднее} &    \bf{0.4867} &   \bf{0.3755} &  \bf{0.4239} &    \bf{ 0.4851} &    \bf{0.3695} &   \bf{0.4195} \\
+		\bf{дисперсия}  &    0.0041 &   0.0019 &  0.0022 &     0.0036 &    0.0025 &   0.0029 \\
+		\bottomrule
+	\end{tabular}
+	\label{table:long_epochs}
+\end{table}
+
+	
+\newpage 
+
 
 \begin{thebibliography}{0}
-\bibitem{codenn}\hypertarget{codenn}{}
-\href{https://www.aclweb.org/anthology/P16-1195.pdf}
-{Srinivasan Iyer, Ioannis Konstas, Alvin Cheung, Luke Zettlemoyer. Summarizing Source Code using a Neural Attention Model. In ACL 2016.}
-\bibitem{chirkova18}\hypertarget{chirkova18}{}
-\href{https://arxiv.org/abs/1810.10927}
-{Nadezhda Chirkova, Ekaterina Lobacheva, Dmitry Vetrov. Bayesian Compression for Natural Language Processing. In EMNLP 2018.}
-\bibitem{code2seq}\hypertarget{code2seq}{}
-\href{https://openreview.net/pdf?id=H1gKYo09tX}
-{Uri Alon, Shaked Brody, Omer Levy, Eran Yahav. Code2Seq: Generating sequences from structured representations of code. In ICLR 2019.}
+	\bibitem{chirkova18}\hypertarget{chirkova18}{}
+	\href{https://arxiv.org/abs/1810.10927}
+	{Nadezhda Chirkova, Ekaterina Lobacheva, Dmitry Vetrov. Bayesian Compression for Natural Language Processing. In EMNLP 2018.}
 \end{thebibliography}
-
-
+	
+	
 \end{document}
-
