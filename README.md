@@ -10,7 +10,7 @@
 
 > Файл: `slides.tex`
 
-Презентацию тоже удобно делать в LaTeX. Для этого необходимо использовать класс `beamer`. Примеры презентаций этого класса: 
+Презентацию тоже удобно делать в LaTeX. Для этого можно использовать класс `beamer`. Примеры презентаций этого класса: 
 
 1. https://www.overleaf.com/learn/latex/beamer
 2. https://www.latextemplates.com/template/beamer-presentation
